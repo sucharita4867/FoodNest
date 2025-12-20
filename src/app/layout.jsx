@@ -29,7 +29,7 @@ export default function RootLayout({ children }) {
         <header classNama="  py-2 ">
           <Navbar />
         </header>
-        <main>{children}</main>
+        <main className="w-11/12 mx-auto">{children}</main>
       </body>
     </html>
   );

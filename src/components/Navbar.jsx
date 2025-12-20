@@ -3,7 +3,7 @@ import React from "react";
 
 const Navbar = () => {
   return (
-    <div className=" w-11/12 mx-auto border mt-6 py-2">
+    <div className=" w-11/12 mx-auto border mt-6 py-2 bg-stone-800">
       <div className="flex justify-between items-center ">
         <figure>
           <img src="/logo.svg" alt="" />
