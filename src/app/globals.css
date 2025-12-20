@@ -24,3 +24,11 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+.btn {
+  @apply bg-[#fd4c00] text-white px-6 py-3 rounded-lg font-bold transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-2xl hover:shadow-orange-300 active:scale-95;
+}
+
+.btn-outline {
+  @apply border-2 border-[#fd4c00] text-[#fd4c00] px-6 py-3 rounded-lg font-semibold transition-all duration-300 hover:bg-[#fd4c00] hover:text-white;
+}
