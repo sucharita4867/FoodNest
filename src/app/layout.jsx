@@ -26,7 +26,7 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <header>
+        <header classNama="  py-2 ">
           <Navbar />
         </header>
         <main>{children}</main>

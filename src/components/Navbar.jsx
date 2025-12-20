@@ -9,8 +9,8 @@ const Navbar = () => {
           <img src="/logo.svg" alt="" />
         </figure>
         <div className="space-x-5">
-          <Link className="btn" href="/food">
-            Food
+          <Link className="btn" href="/foods">
+            Foods
           </Link>
           <Link className="btn-outline" href="/reviews">
             Reviews
