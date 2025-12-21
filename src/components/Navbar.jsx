@@ -6,9 +6,10 @@ const Navbar = () => {
     <div className="bg-stone-800">
       <div className="   py-2 w-11/12 mx-auto   ">
         <div className="flex justify-between items-center ">
-          <figure>
+          <Link href="/">
             <img src="/logo.svg" alt="" />
-          </figure>
+          </Link>
+
           <div className="space-x-5">
             <Link className="btn" href="/foods">
               Foods
