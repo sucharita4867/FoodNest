@@ -26,7 +26,7 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <header classNama="  py-2 ">
+        <header classNama=" ">
           <Navbar />
         </header>
         <main className="w-11/12 mx-auto">{children}</main>
