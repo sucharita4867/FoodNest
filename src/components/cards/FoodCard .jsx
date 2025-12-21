@@ -1,5 +1,9 @@
+"use client";
+
+import Link from "next/link";
+
 const FoodCard = ({ food, onAddToCart, onViewDetails }) => {
-  const { title, foodImg, price, category } = food;
+  const { title, foodImg, price, category, id } = food;
 
   return (
     <div
@@ -35,27 +39,29 @@ const FoodCard = ({ food, onAddToCart, onViewDetails }) => {
         {/* Buttons */}
         <div className="flex gap-3 pt-2">
           <button
-            onClick={onAddToCart}
+            onClick={() => onAddToCart(food)}
             className="
-              flex-1 bg-[#fd4c00] text-white py-2 rounded-xl font-semibold
-              transition-all duration-300
-              hover:scale-105 active:scale-95
-            "
+      flex-1 bg-[#fd4c00] text-white py-2 rounded-xl font-semibold
+      transition-all duration-300
+      hover:scale-105 active:scale-95
+    "
           >
             Add to Cart
           </button>
 
-          <button
-            onClick={onViewDetails}
+          <Link
+            href={`/foods/${id}`}
             className="
-              flex-1 border border-orange-500 text-orange-400 py-2 rounded-xl font-semibold
-              transition-all duration-300
-              hover:bg-orange-500 hover:text-white
-              hover:scale-105 active:scale-95
-            "
+      flex-1 text-center
+      border border-orange-500 text-orange-400
+      py-2 rounded-xl font-semibold
+      transition-all duration-300
+      hover:bg-orange-500 hover:text-white
+      hover:scale-105 active:scale-95
+    "
           >
             View Details
-          </button>
+          </Link>
         </div>
       </div>
     </div>
