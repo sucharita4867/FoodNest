@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import AddCardBtn from "../buttons/AddCardBtn";
 
 const FoodCard = ({ food, onAddToCart, onViewDetails }) => {
   const { title, foodImg, price, category, id } = food;
@@ -37,17 +38,10 @@ const FoodCard = ({ food, onAddToCart, onViewDetails }) => {
         <p className="text-xl font-bold text-orange-500">₹{price}</p>
 
         {/* Buttons */}
-        <div className="flex gap-3 pt-2">
-          <button
-            onClick={() => onAddToCart(food)}
-            className="
-      flex-1 bg-[#fd4c00] text-white py-2 rounded-xl font-semibold
-      transition-all duration-300
-      hover:scale-105 active:scale-95
-    "
-          >
-            Add to Cart
-          </button>
+        <div className="flex flex-nowrap gap-3 pt-2">
+          <div className="flex-1">
+            <AddCardBtn food={food} />
+          </div>
 
           <Link
             href={`/foods/${id}`}
