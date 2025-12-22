@@ -26,15 +26,15 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen flex flex-col bg-black text-white`}
       >
         <header>
           <Navbar />
         </header>
-        <main className="w-11/12 mx-auto">
+        <main className="w-11/12 mx-auto flex-1">
           <CardProvider>{children}</CardProvider>
         </main>
-        <footer>
+        <footer className="bg-zinc-900">
           <Footer />
         </footer>
       </body>
