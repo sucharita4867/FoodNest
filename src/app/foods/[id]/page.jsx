@@ -1,5 +1,9 @@
 import Link from "next/link";
 
+export function generateStaticParams() {
+  return [{ id: '52949' }, { id: '52924' }, { id: '52964' }]
+}
+
 const getSingleFood = async (id) => {
   const res = await fetch(
     `https://taxi-kitchen-api.vercel.app/api/v1/foods/${id}`
@@ -14,7 +18,7 @@ const getSingleFood = async (id) => {
 };
 
 const FoodsDetails = async ({ params }) => {
- const { id } = await params; // 🔥 IMPORTANT
+ const { id } = await params; 
   const food = await getSingleFood(id);
   //   if (!food) {
   //     return (
