@@ -1,4 +1,4 @@
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono, Poppins } from "next/font/google";
 import "./globals.css";
 import CardProvider from "@/context/CardProvider";
 import Navbar from "@/components/Navbar";
@@ -11,6 +11,10 @@ const geistSans = Geist({
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
+  subsets: ["latin"],
+});
+const popping = Poppins({
+  weight: ["400", "500", "700"],
   subsets: ["latin"],
 });
 
@@ -29,7 +33,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen flex flex-col bg-black text-white`}
+        className={`${popping.className} antialiased min-h-screen flex flex-col bg-black text-white`}
       >
         <header>
           <Navbar />

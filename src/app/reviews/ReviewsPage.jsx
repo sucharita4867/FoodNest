@@ -2,6 +2,12 @@
 import ReviewCard from "@/components/cards/ReviewCard";
 import React, { useEffect, useState } from "react";
 import ReviewLoading from "./ReviewLoading";
+import { Roboto } from "next/font/google";
+
+const roboto = Roboto({
+  weight: ["400"],
+  subsets: ["latin"],
+});
 
 const ReviewsPage = () => {
   const [reviews, setReviews] = useState([]);
@@ -20,7 +26,7 @@ const ReviewsPage = () => {
     return <ReviewLoading></ReviewLoading>;
   }
   return (
-    <div>
+    <div className={roboto.className}>
       <h1 className="text-2xl ">
         Total Reviews :{" "}
         <span className="text-orange-400 text-2xl">{reviews.length}</span>
