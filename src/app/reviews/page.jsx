@@ -2,7 +2,10 @@ import React from "react";
 import ReviewsPage from "./ReviewsPage";
 
 export const metadata = {
-  title: "All Reviews",
+  // title: "All Reviews",
+  title: {
+    absolute: "satiesfied users",
+  },
   description: "Best FastFood in India",
 };
 

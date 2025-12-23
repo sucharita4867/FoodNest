@@ -15,7 +15,10 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "FoodNest",
+  title: {
+    default: "FoodNest",
+    template: "%s | FoodNest",
+  },
   description: "Best FastFood in India",
   icons: {
     icon: "/logo.svg",

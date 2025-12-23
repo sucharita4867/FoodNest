@@ -1,7 +1,19 @@
 import Link from "next/link";
 
 export function generateStaticParams() {
-  return [{ id: '52949' }, { id: '52924' }, { id: '52964' }]
+  return [{ id: "52949" }, { id: "52924" }, { id: "52964" }];
+}
+
+export async function generateMetadata({ params }) {
+  const { id } = await params;
+  const res = await fetch(
+    `https://taxi-kitchen-api.vercel.app/api/v1/foods/${id}`
+  );
+
+  const { details = {} } = await res.json();
+  return {
+    title: details.title,
+  };
 }
 
 const getSingleFood = async (id) => {
@@ -18,7 +30,7 @@ const getSingleFood = async (id) => {
 };
 
 const FoodsDetails = async ({ params }) => {
- const { id } = await params; 
+  const { id } = await params;
   const food = await getSingleFood(id);
   //   if (!food) {
   //     return (
