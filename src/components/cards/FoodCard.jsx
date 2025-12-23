@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import AddCardBtn from "../buttons/AddCardBtn";
+import Image from "next/image";
 
 const FoodCard = ({ food, onAddToCart, onViewDetails }) => {
   const { title, foodImg, price, category, id } = food;
@@ -16,7 +17,7 @@ const FoodCard = ({ food, onAddToCart, onViewDetails }) => {
     >
       {/* Image Wrapper */}
       <div className="overflow-hidden">
-        <img
+        {/* <img
           src={foodImg}
           alt={title}
           className="
@@ -24,6 +25,17 @@ const FoodCard = ({ food, onAddToCart, onViewDetails }) => {
             transition-transform duration-500
             group-hover:scale-110
           "
+        /> */}
+        <Image
+          src={foodImg}
+          alt={title}
+          className="
+            w-full h-48 object-cover
+            transition-transform duration-500
+            group-hover:scale-110
+          "
+          width={300}
+          height={150}
         />
       </div>
 

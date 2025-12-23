@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useState } from "react";
 
 const ReviewCard = ({ reviewData }) => {
@@ -19,7 +20,14 @@ const ReviewCard = ({ reviewData }) => {
     <div className="bg-zinc-900 rounded-2xl p-6 space-y-4 shadow-lg">
       {/* User Info */}
       <div className="flex items-center gap-4">
-        <img
+        {/* <img
+          src={photo}
+          alt={user}
+          className="w-14 h-14 rounded-full object-cover"
+        /> */}
+        <Image
+          width={56}
+          height={56}
           src={photo}
           alt={user}
           className="w-14 h-14 rounded-full object-cover"
