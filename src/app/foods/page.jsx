@@ -13,6 +13,13 @@ const getFoods = async (search) => {
   return data.foods || [];
 };
 
+
+
+export const metadata = {
+  title: "All Foods",
+  description: "Best FastFood in India",
+};
+
 const FoodsPage = async ({ searchParams }) => {
   const { search = "" } = await searchParams;
   // console.log(data);
