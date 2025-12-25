@@ -13,11 +13,14 @@ const Navbar = () => {
           </Link>
 
           <div className="space-x-5">
-            <Link prefetch={false} className="btn" href="/foods">
+            <Link prefetch={false} className="btn-outline" href="/foods">
               Foods
             </Link>
-            <Link className="btn-outline" href="/reviews">
+            <Link className="btn" href="/reviews">
               Reviews
+            </Link>
+            <Link prefetch={false} className="btn-outline" href="/feedback">
+              Feedbacks
             </Link>
           </div>
         </div>
