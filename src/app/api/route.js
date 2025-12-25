@@ -7,6 +7,9 @@ export const feedback = [
     id: 2,
     message: "food is not bad , but not very good.",
   },
+   {
+    "message": "all good"
+   }
 ];
 
 export async function GET(request) {

@@ -17,7 +17,7 @@ export async function GET(request, { params }) {
 
   const result = await feedbackCollection.findOne(query);
 
-  return Response.json( result );
+  return Response.json(result);
 }
 
 // delete
@@ -36,5 +36,34 @@ export async function DELETE(request, { params }) {
 
   const result = await feedbackCollection.deleteOne(query);
 
-  return Response.json(result );
+  return Response.json(result);
+}
+
+// update
+
+export async function PATCH(request, { params }) {
+  const { id } = await params;
+  const { message } = await request.json();
+
+  if (id.length != 24) {
+    return Response.json({
+      status: 400,
+      message: "send correct _id",
+    });
+  }
+
+  if (!message || typeof message !== "string") {
+    return Response.json({ message: "please send a message" }, { status: 400 });
+  }
+
+  const query = { _id: new ObjectId(id) };
+  const newData = {
+    $set: {
+      message,
+    },
+  };
+
+  const result = await feedbackCollection.updateOne(query, newData);
+
+  return Response.json(result);
 }
