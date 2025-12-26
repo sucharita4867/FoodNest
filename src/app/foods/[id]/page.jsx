@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { redirect } from "next/navigation";
 
 export function generateStaticParams() {
   return [{ id: "52949" }, { id: "52924" }, { id: "52964" }];
@@ -44,13 +45,14 @@ const getSingleFood = async (id) => {
 const FoodsDetails = async ({ params }) => {
   const { id } = await params;
   const food = await getSingleFood(id);
-  //   if (!food) {
-  //     return (
-  //       <div className="min-h-screen flex items-center justify-center bg-black text-white">
-  //         <h2 className="text-2xl font-bold">Food Not Found</h2>
-  //       </div>
-  //     );
-  //   }
+  if (!food.title) {
+    redirect("/foods");
+    // return (
+    //   <div className="min-h-screen flex items-center justify-center bg-black text-white">
+    //     <h2 className="text-2xl font-bold">Food Not Found</h2>
+    //   </div>
+    // );
+  }
 
   const { title, foodImg, price, category, area, video } = food;
 

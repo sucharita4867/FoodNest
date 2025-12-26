@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   experimental: {
-    turbo: false, 
+    turbo: false,
   },
 
   images: {
@@ -17,6 +17,15 @@ const nextConfig = {
         pathname: "/api/portraits/**",
       },
     ],
+  },
+  async redirects() {
+    return [
+      {
+        source: "/food-details/:id",
+        destination: "/foods/:id",
+        permanent: true,
+      },
+    ];
   },
 };
 
