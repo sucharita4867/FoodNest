@@ -1,11 +1,17 @@
-import React from 'react';
+import AddFeedbackPage from "@/components/AddFeedbackPage";
+import React from "react";
 
-const AddFeedbackPage = () => {
-      return (
-            <div>
-                  add 
-            </div>
-      );
+export const metadata = {
+  title: "Add Feedback",
 };
 
-export default AddFeedbackPage;
+const AddFeeds = () => {
+  return (
+    <div>
+      <h1 className="text-2xl text-center mt-4">Add Feedback</h1>
+      <AddFeedbackPage></AddFeedbackPage>
+    </div>
+  );
+};
+
+export default AddFeeds;

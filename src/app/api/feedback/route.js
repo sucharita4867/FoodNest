@@ -1,4 +1,5 @@
 import { connect } from "@/app/lib/dbConnect";
+import { revalidatePath } from "next/cache";
 
 export async function GET() {
   const feedbackCollection = await connect("feedbacks");
@@ -25,15 +26,13 @@ export async function POST(request) {
     };
 
     const result = await feedbackCollection.insertOne(newFeedback);
+    revalidatePath("/feedback");
 
     return Response.json(
       { acknowledged: true, insertedId: result.insertedId },
       { status: 201 }
     );
   } catch (error) {
-    return Response.json(
-      { message: "Invalid JSON body" },
-      { status: 400 }
-    );
+    return Response.json({ message: "Invalid JSON body" }, { status: 400 });
   }
 }
