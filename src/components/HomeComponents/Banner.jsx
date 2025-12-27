@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 const Banner = () => {
   return (
@@ -37,11 +38,13 @@ const Banner = () => {
           transition={{ duration: 0.8 }}
           className="flex justify-center"
         >
-          <img
+          <Image
             src="https://images.unsplash.com/photo-1600891964599-f61ba0e24092"
             alt="Food Banner"
-            className="w-[420px] rounded-3xl shadow-2xl"
-          />
+            width={500}
+            height={400}
+            className=" rounded-3xl shadow-2xl"
+          ></Image>
         </motion.div>
       </div>
     </section>

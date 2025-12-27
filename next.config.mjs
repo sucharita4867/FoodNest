@@ -1,10 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  experimental: {
-    turbo: false,
-  },
-
   images: {
+    domains: ["images.unsplash.com"],
+
     remotePatterns: [
       {
         protocol: "https",
@@ -18,6 +16,7 @@ const nextConfig = {
       },
     ],
   },
+
   async redirects() {
     return [
       {

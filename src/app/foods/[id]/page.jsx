@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { redirect } from "next/navigation";
+import Image from "next/image";
 
 export function generateStaticParams() {
   return [{ id: "52949" }, { id: "52924" }, { id: "52964" }];
@@ -61,11 +62,18 @@ const FoodsDetails = async ({ params }) => {
       <div className="w-11/12 max-w-5xl mx-auto grid md:grid-cols-2 gap-10">
         {/* Image */}
         <div className="bg-zinc-900 rounded-2xl overflow-hidden">
-          <img
+          {/* <img
             src={foodImg}
             alt={title}
             className="w-full h-full object-cover"
-          />
+          /> */}
+          <Image
+            width={600}
+            height={400}
+            src={foodImg}
+            alt={title}
+            className="w-full h-full object-cover"
+          ></Image>
         </div>
         {/* Details */}
         <div className="space-y-5">

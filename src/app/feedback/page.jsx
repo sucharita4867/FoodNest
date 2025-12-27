@@ -2,20 +2,26 @@ import FeedbackCard from "@/components/cards/FeedbackCard";
 import { Roboto } from "next/font/google";
 import Link from "next/link";
 import React from "react";
+import { connect } from "../lib/dbConnect";
 export const metadata = {
   title: "feedback",
 };
+export const dynamic = "force-dynamic";
 
 const getFeedback = async () => {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_server}/api/feedback`, {
-    cache: "force-cache",
-    next: { revalidate: 60 },
-  });
-  return await res.json();
+  try {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_server}/api/feedback`, {
+      cache: "no-store",
+    });
+    return await res.json();
+  } catch (err) {
+    return [];
+  }
 };
 
 const FeedbackPage = async () => {
-  const feedback = await getFeedback();
+  // const feedback = await getFeedback();
+  const feedback = await connect('feedbacks').find().toArray()
   return (
     <div>
       <h1 className="text-2xl ">

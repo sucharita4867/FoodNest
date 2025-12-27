@@ -1,5 +1,3 @@
-"use client";
-
 import { formatDistanceToNow } from "date-fns";
 
 const FeedbackCard = ({ feedback, onDelete, onUpdate }) => {
@@ -15,9 +13,7 @@ const FeedbackCard = ({ feedback, onDelete, onUpdate }) => {
       "
     >
       {/* Message */}
-      <p className="text-gray-200 text-sm leading-relaxed">
-        {message}
-      </p>
+      <p className="text-gray-200 text-sm leading-relaxed">{message}</p>
 
       {/* Date */}
       <p className="text-xs text-gray-400 mt-3">
@@ -27,7 +23,7 @@ const FeedbackCard = ({ feedback, onDelete, onUpdate }) => {
       {/* Actions */}
       <div className="flex gap-3 mt-4">
         <button
-          onClick={() => onUpdate(feedback)}
+          // onClick={() => onUpdate(feedback)}
           className="
             flex-1 py-2 rounded-xl
             bg-blue-600/20 text-blue-400
@@ -41,7 +37,7 @@ const FeedbackCard = ({ feedback, onDelete, onUpdate }) => {
         </button>
 
         <button
-          onClick={() => onDelete(_id)}
+          // onClick={() => onDelete(_id)}
           className="
             flex-1 py-2 rounded-xl
             bg-red-600/20 text-red-400
