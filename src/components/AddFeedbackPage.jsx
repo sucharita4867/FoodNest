@@ -8,7 +8,7 @@ const AddFeedbackPage = ({ postFeedback }) => {
     e.preventDefault();
     const message = e.target.message.value;
     // alert(message);
-    const data = postFeedback(message);
+    const data = await postFeedback(message);
 
     // const res = await fetch(`${process.env.NEXT_PUBLIC_server}/api/feedback`, {
     //   method: "POST",

@@ -1,23 +1,14 @@
-import { connect } from "@/app/lib/dbConnect";
+import { connect } from "@/lib/dbConnect";
 import AddFeedbackPage from "@/components/AddFeedbackPage";
 import React from "react";
+import { postFeedback } from "@/action/server/feedback";
 
 export const metadata = {
   title: "Add Feedback",
 };
 
 const AddFeeds = () => {
-  const postFeedback = async (message) => {
-    "use server";
-    const result = await connect("feedbacks").insertOne({
-      message,
-      date: new Date(),
-    });
-    return {
-      ...result,
-      insertedId: result.insertedId.toString(),
-    };
-  };
+  
   return (
     <div>
       <h1 className="text-2xl text-center mt-4">Add Feedback</h1>
