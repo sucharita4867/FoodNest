@@ -21,10 +21,7 @@ const ReviewCard = ({ reviewData }) => {
       {/* User Info */}
       <div className="flex items-center gap-4">
         {/* <img
-          src={photo}
-          alt={user}
-          className="w-14 h-14 rounded-full object-cover"
-        /> */}
+         */}
         <Image
           width={56}
           height={56}
