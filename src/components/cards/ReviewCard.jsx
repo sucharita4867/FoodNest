@@ -44,7 +44,6 @@ const ReviewCard = ({ reviewData }) => {
         <span className="text-gray-600">{"★".repeat(5 - rating)}</span>
       </div>
 
-      {/* Review Text */}
       <p className="text-gray-300 leading-relaxed">{review}</p>
 
       {/* Like Button */}
