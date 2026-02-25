@@ -46,7 +46,6 @@ const ReviewCard = ({ reviewData }) => {
 
       <p className="text-gray-300 leading-relaxed">{review}</p>
 
-      {/* Like Button */}
       <div className="flex items-center gap-3 pt-2">
         <button
           onClick={handleLike}
