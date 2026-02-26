@@ -28,7 +28,6 @@ const AddFeedbackPage = ({ postFeedback }) => {
     <div className="max-w-md mx-auto my-10 bg-zinc-900 p-6 rounded-2xl">
       <form className="space-y-4" onSubmit={handleSubmit}>
         <textarea
-          // value={message}
           required
           name="message"
           placeholder="Write your feedback..."
