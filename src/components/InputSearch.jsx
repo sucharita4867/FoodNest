@@ -14,8 +14,6 @@ const InputSearch = () => {
     const newParams = new URLSearchParams(params.toString());
     newParams.set("search", value);
     route.push(`?${newParams.toString()}`);
-
-    //     console.log(value);
   };
 
   return (
