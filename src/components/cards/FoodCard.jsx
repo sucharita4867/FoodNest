@@ -17,15 +17,6 @@ const FoodCard = ({ food, onAddToCart, onViewDetails }) => {
     >
       {/* Image Wrapper */}
       <div className="overflow-hidden">
-        {/* <img
-          src={foodImg}
-          alt={title}
-          className="
-            w-full h-48 object-cover
-            transition-transform duration-500
-            group-hover:scale-110
-          "
-        /> */}
         <Image
           src={foodImg}
           alt={title}
